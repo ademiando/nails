@@ -1,181 +1,154 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>nailsbypwettyy | Nail Art Home Service</title>
-  <meta name="description" content="Nail art premium home service di Sakra Barat, Lombok Timur. Booking via WhatsApp mulai 35K.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nailsbypwettyy | Nail Art Premium</title>
+  <meta name="description" content="Layanan Nail Art Home Service Premium di Sakra Barat, Lombok Timur. Buka setiap hari 09.00 - 20.00 WITA.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #ff89d6;
-      --glass-bg: rgba(255, 255, 255, 0.04);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --text: #f5f5f5;
-    }
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --accent: #e6a8d7;
+      --text: #f4f4f4;
+    }* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0d0d0d;
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+header {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #000000 80%, transparent);
+}
 
-    header {
-      padding: 2rem 1rem 1rem;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--primary);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+header h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+}
 
-    .container {
-      padding: 2rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
 
-    .card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(20px);
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 800px;
-      width: 100%;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
-    }
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1rem auto;
+  color: #ccc;
+}
 
-    .card h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    .btn {
-      background: var(--primary);
-      color: #000;
-      padding: 0.8rem 1.6rem;
-      border-radius: 2rem;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-      transition: background 0.3s;
-    }
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
 
-    .btn:hover { background: #fff; }
+.section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 0.75rem;
-      object-fit: cover;
-      height: 130px;
-      border: 1px solid var(--glass-border);
-      transition: transform 0.3s;
-    }
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
 
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 0.75rem;
-      margin-top: 1rem;
-    }
+.card {
+  flex: 1 1 300px;
+  max-width: 320px;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem 3rem;
-      font-size: 0.9rem;
-      color: #999;
-    }
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 12px;
+}
 
-    .socials {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #111;
+}
 
-    .socials a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      background: #222;
-      border-radius: 2rem;
-      border: 1px solid var(--glass-border);
-      transition: all 0.3s;
-    }
+.social {
+  margin-top: 1rem;
+}
 
-    .socials a:hover {
-      background: var(--primary);
-      color: #000;
-    }
+.social a {
+  color: var(--accent);
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
   </style>
 </head>
 <body>
-
-  <header>nailsbypwettyy</header>
-
-  <main class="container">
-
-    <section class="card">
-      <h2>✨ Nail Art Home Service</h2>
-      <p>Saya Putri — nail artist profesional dari <strong>Sakra Barat, Lombok Timur</strong>. Hadir langsung ke rumahmu dengan layanan premium mulai dari <strong>Rp35.000</strong>. Buka setiap hari pukul <strong>09.00–20.00 WITA</strong>.</p>
-      <a href="https://wa.me/6281234567890" class="btn" target="_blank">Booking via WhatsApp</a>
-    </section>
-
-    <section class="card">
-      <h2>💅 Galeri Desain</h2>
-      <div class="gallery">
-        <img src="https://source.unsplash.com/130x130/?nail-art-1" alt="nail art 1">
-        <img src="https://source.unsplash.com/130x130/?nail-design" alt="nail art 2">
-        <img src="https://source.unsplash.com/130x130/?nails" alt="nail art 3">
-        <img src="https://source.unsplash.com/130x130/?nail,beauty" alt="nail art 4">
-        <img src="https://source.unsplash.com/130x130/?manicure" alt="nail art 5">
-        <img src="https://source.unsplash.com/130x130/?nail-glitter" alt="nail art 6">
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>📍 Lokasi Saya</h2>
-      <p>Area layanan home service: Sakra Barat, Jerowaru, Keruak, Selong, Labuhan Haji.</p>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126858.13115650608!2d116.48225892131918!3d-8.650555405744262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdd1362d9f5fc7%3A0xf1d7a875eacb261d!2sSakra%20Barat%2C%20Kabupaten%20Lombok%20Timur%2C%20Nusa%20Tenggara%20Barat!5e0!3m2!1sen!2sid!4v1716290321446!5m2!1sen!2sid" 
-        allowfullscreen="" 
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2025 nailsbypwettyy — All rights reserved</p>
-    <div class="socials">
+  <header>
+    <h1>nailsbypwettyy</h1>
+    <p>Premium Nail Art Home Service • Sakra Barat</p>
+  </header>  <section class="hero">
+    <p>Layanan nail art profesional langsung ke rumah Anda. Booking mudah via WhatsApp. Mulai dari Rp35.000.</p>
+    <a class="cta" href="https://wa.me/6281234567890" target="_blank">Booking Sekarang</a>
+  </section>  <section class="section">
+    <h2 style="text-align:center;margin-bottom:2rem;">Galeri Karya</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/featured/?nailart" alt="Nail Art" />
+      <img src="https://source.unsplash.com/featured/?manicure" alt="Manicure" />
+      <img src="https://source.unsplash.com/featured/?nails" alt="Nails" />
+      <img src="https://source.unsplash.com/featured/?beauty,nail" alt="Beauty" />
+    </div>
+  </section>  <section class="section">
+    <h2 style="text-align:center;margin-bottom:2rem;">Lokasi Layanan</h2>
+    <div class="glass-card">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.0965909778914!2d116.47433701532335!3d-8.563401088032155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdd19daaa74071%3A0x83a23d56b287e591!2sSakra%20Barat%2C%20Lombok%20Timur!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>  <footer>
+    <p>&copy; 2025 nailsbypwettyy. All rights reserved.</p>
+    <div class="social">
+      <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a> |
       <a href="https://instagram.com/nailsbypwettyy" target="_blank">Instagram</a>
-      <a href="https://tiktok.com/@nailsbypwettyy" target="_blank">TikTok</a>
-      <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a>
     </div>
   </footer>
-
 </body>
 </html>
