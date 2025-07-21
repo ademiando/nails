@@ -616,7 +616,8 @@
       }
     }
 
-    header {
+
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -631,6 +632,34 @@ body {
   padding-top: 80px; /* agar konten tidak tertutup header */
 }
 
+/* Nav tetap tampil di mobile */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Tombol hamburger tetap */
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 20px;
+  display: block;
+}
+
+/* Overlay hamburger menu */
 .mobile-menu-overlay {
   position: fixed;
   top: 0;
@@ -672,15 +701,20 @@ body {
   cursor: pointer;
 }
 
-/* Responsive: hide nav, show hamburger on mobile */
+/* Responsive: nav tetap tampil di mobile, tombol hamburger juga tampil */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    gap: 12px;
+    font-size: 15px;
   }
-  .mobile-menu-btn {
-    display: block;
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
+    
+    
   </style>
 
   
@@ -688,13 +722,11 @@ body {
 <body>
   
   <!-- Header -->
- <header>
+<header>
   <div class="container header-container">
-    <div class="logo">nailsbypwettyy</div>
     <nav class="nav-links">
       <a href="#about">Tentang</a>
       <a href="#gallery">Galeri</a>
-      <a href="#pricing">Harga</a>
       <a href="#booking">Booking</a>
       <a href="#location">Lokasi</a>
     </nav>
@@ -704,28 +736,21 @@ body {
   </div>
 </header>
 
-<!-- Mobile Menu Overlay -->
+<!-- Mobile Menu Overlay (Hanya menu tambahan) -->
 <div class="mobile-menu-overlay" id="mobileMenu">
   <button class="close-menu-btn"><i class="fas fa-times"></i></button>
   <ul>
-    <li><a href="#about">Tentang</a></li>
-    <li><a href="#gallery">Galeri</a></li>
-    <li><a href="#pricing">Harga</a></li>
-    <li><a href="#booking">Booking</a></li>
-    <li><a href="#location">Lokasi</a></li>
-    <li><a href="#kontak">Kontak</a></li>
     <li><a href="#karir">Karir</a></li>
     <li><a href="#kerjasama">Kerjasama</a></li>
-    <li><a href="#testimoni">Testimoni</a></li>
   </ul>
 </div>
-
+  
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <h1 class="hero-title">Nail Art <span>Premium</span></h1>
+          <h1 class="hero-title">Nail Art <span>Nailsbypwettyy</span></h1>
           <p class="hero-subtitle">Layanan home service profesional di Sakra Barat, Lombok Timur dengan sentuhan seni terbaik</p>
           <a href="https://wa.me/6281234567890" class="hero-cta">
             <i class="fab fa-whatsapp"></i> Booking via WhatsApp
