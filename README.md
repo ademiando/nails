@@ -1,4 +1,4 @@
-# nailsbypwettyy | Premium Nail Art Home Service
+# nailsbypwettyy | Nail Art Home Service
 
 Website layanan nail art home service premium di Sakra Barat, Lombok Timur.  
 Booking mudah via WhatsApp, desain kekinian, harga terjangkau.
