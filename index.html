@@ -2,139 +2,132 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nailsbypwettyy | Home Service Nail Art</title>
-  <meta name="description" content="Nail art premium home service di Sakra Barat, Lombok Timur. Open 09.00-20.00 WITA. Booking mulai 35K via WhatsApp.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>nailsbypwettyy | Nail Art Home Service</title>
+  <meta name="description" content="Nail art premium home service di Sakra Barat, Lombok Timur. Booking via WhatsApp mulai 35K.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #ff89d6;
-      --glass-bg: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.1);
-      --text: #f9f9f9;
+      --glass-bg: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --text: #f5f5f5;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html, body {
+    body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(ellipse at top, #1b1b1b 0%, #000 100%);
+      background: radial-gradient(circle at top, #1a1a1a, #000);
       color: var(--text);
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
     header {
-      padding: 1.5rem;
+      padding: 2rem 1rem 1rem;
       text-align: center;
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 800;
       color: var(--primary);
-      text-transform: uppercase;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
-    .hero {
+    .container {
+      padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 3rem 1.5rem;
+      gap: 2rem;
     }
 
-    .glass-card {
+    .card {
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       backdrop-filter: blur(20px);
-      border-radius: 1rem;
       padding: 2rem;
-      max-width: 600px;
+      border-radius: 1rem;
+      max-width: 800px;
       width: 100%;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
     }
 
-    .glass-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 40px rgba(255,137,214,0.3);
-    }
-
-    h1 {
-      font-size: 2rem;
+    .card h2 {
+      color: var(--primary);
       margin-bottom: 1rem;
-      color: #fff;
-    }
-
-    p {
-      font-size: 1rem;
-      opacity: 0.9;
-      line-height: 1.6;
     }
 
     .btn {
-      margin-top: 1.5rem;
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
       background: var(--primary);
       color: #000;
-      font-weight: bold;
+      padding: 0.8rem 1.6rem;
       border-radius: 2rem;
+      font-weight: bold;
       text-decoration: none;
-      transition: background 0.3s ease;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s;
     }
 
-    .btn:hover {
-      background: #fff;
+    .btn:hover { background: #fff; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
     }
 
-    .contact {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 1.5rem;
-    }
-
-    .contact a {
-      background: #222;
-      padding: 0.6rem 1.2rem;
-      border-radius: 1rem;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.9rem;
+    .gallery img {
+      width: 100%;
+      border-radius: 0.75rem;
+      object-fit: cover;
+      height: 130px;
       border: 1px solid var(--glass-border);
-      transition: background 0.3s ease;
+      transition: transform 0.3s;
     }
 
-    .contact a:hover {
-      background: var(--primary);
-      color: #000;
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 0.75rem;
+      margin-top: 1rem;
     }
 
     footer {
       text-align: center;
-      font-size: 0.85rem;
-      padding: 2rem 1rem;
-      color: #888;
+      padding: 2rem 1rem 3rem;
+      font-size: 0.9rem;
+      color: #999;
     }
 
-    @media (min-width: 768px) {
-      .hero {
-        padding-top: 5rem;
-      }
+    .socials {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-      h1 {
-        font-size: 2.5rem;
-      }
+    .socials a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      background: #222;
+      border-radius: 2rem;
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s;
+    }
 
-      p {
-        font-size: 1.1rem;
-      }
+    .socials a:hover {
+      background: var(--primary);
+      color: #000;
     }
   </style>
 </head>
@@ -142,28 +135,46 @@
 
   <header>nailsbypwettyy</header>
 
-  <section class="hero">
-    <div class="glass-card">
-      <h1>Nail Art Home Service</h1>
-      <p>Saya Putri, nail artist profesional dari <strong>Sakra Barat, Lombok Timur</strong>. Layanan premium langsung ke rumah kamu. Mulai dari <strong>Rp35.000</strong>. Buka setiap hari <strong>09.00–20.00 WITA</strong>.</p>
-      <div class="contact">
-        <a href="https://wa.me/6281234567890" target="_blank">Booking WhatsApp</a>
-        <a href="https://instagram.com/nailsbypwettyy" target="_blank">@nailsbypwettyy</a>
-      </div>
-      <a href="#more" class="btn">Lihat Detail</a>
-    </div>
+  <main class="container">
 
-    <div id="more" class="glass-card">
-      <h1>Paket & Desain</h1>
-      <p><strong>Basic Care</strong> – Rp35K<br>
-        <strong>Simple Design</strong> – Rp75K<br>
-        <strong>Premium Art</strong> – Rp150K+ (3D, marble, glitter, custom request)</p>
-      <p>Garansi hasil 2 minggu. Bahan aman dan steril. Booking min H-1.</p>
-    </div>
-  </section>
+    <section class="card">
+      <h2>✨ Nail Art Home Service</h2>
+      <p>Saya Putri — nail artist profesional dari <strong>Sakra Barat, Lombok Timur</strong>. Hadir langsung ke rumahmu dengan layanan premium mulai dari <strong>Rp35.000</strong>. Buka setiap hari pukul <strong>09.00–20.00 WITA</strong>.</p>
+      <a href="https://wa.me/6281234567890" class="btn" target="_blank">Booking via WhatsApp</a>
+    </section>
+
+    <section class="card">
+      <h2>💅 Galeri Desain</h2>
+      <div class="gallery">
+        <img src="https://source.unsplash.com/130x130/?nail-art-1" alt="nail art 1">
+        <img src="https://source.unsplash.com/130x130/?nail-design" alt="nail art 2">
+        <img src="https://source.unsplash.com/130x130/?nails" alt="nail art 3">
+        <img src="https://source.unsplash.com/130x130/?nail,beauty" alt="nail art 4">
+        <img src="https://source.unsplash.com/130x130/?manicure" alt="nail art 5">
+        <img src="https://source.unsplash.com/130x130/?nail-glitter" alt="nail art 6">
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📍 Lokasi Saya</h2>
+      <p>Area layanan home service: Sakra Barat, Jerowaru, Keruak, Selong, Labuhan Haji.</p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126858.13115650608!2d116.48225892131918!3d-8.650555405744262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdd1362d9f5fc7%3A0xf1d7a875eacb261d!2sSakra%20Barat%2C%20Kabupaten%20Lombok%20Timur%2C%20Nusa%20Tenggara%20Barat!5e0!3m2!1sen!2sid!4v1716290321446!5m2!1sen!2sid" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+  </main>
 
   <footer>
-    &copy; 2025 nailsbypwettyy. Made with 💅 in Lombok.
+    <p>&copy; 2025 nailsbypwettyy — All rights reserved</p>
+    <div class="socials">
+      <a href="https://instagram.com/nailsbypwettyy" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@nailsbypwettyy" target="_blank">TikTok</a>
+      <a href="https://wa.me/6281234567890" target="_blank">WhatsApp</a>
+    </div>
   </footer>
 
 </body>
