@@ -1,1147 +1,170 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nailsbypwettyy | Premium Nail Art Home Service</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <style>
-        :root {
-            --dark-bg: #0f0f0f;
-            --dark-card: rgba(25, 25, 25, 0.6);
-            --gold: #FFD700;
-            --gold-light: #ffea80;
-            --pink: #ff6b8b;
-            --text-light: #f5f5f7;
-            --text-gray: #a0a0a0;
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 10% 20%, rgba(40, 40, 40, 0.1) 0%, rgba(15, 15, 15, 0.9) 90%);
-        }
-
-        .glass-card {
-            background: var(--dark-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.4s ease;
-        }
-
-        header.scrolled {
-            background: rgba(15, 15, 15, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            position: relative;
-            padding: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 120px 0 80px;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            color: var(--gold);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            color: var(--text-gray);
-            margin-bottom: 40px;
-            max-width: 500px;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 40px;
-            background: var(--gold);
-            color: var(--dark-bg);
-            font-weight: 600;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .hero-cta:hover {
-            background: var(--gold-light);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
-        }
-
-        .hero-animation {
-            flex: 1;
-            max-width: 600px;
-            opacity: 0;
-            transform: scale(0.9);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--gold);
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* About */
-        .about-content {
-            display: flex;
-            gap: 50px;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 16px;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-text {
-            flex: 1;
-            opacity: 0;
-            transform: translateX(30px);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .about-info {
-            margin-top: 30px;
-            padding: 25px;
-            border-radius: 16px;
-        }
-
-        .about-info p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 18px;
-        }
-
-        .about-info i {
-            color: var(--gold);
-            font-size: 20px;
-            min-width: 24px;
-        }
-
-        /* Gallery */
-        .gallery-filters {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 10px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            color: var(--text-light);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--gold);
-            color: var(--dark-bg);
-            border-color: var(--gold);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .gallery-item {
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            height: 300px;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .gallery-title {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .gallery-category {
-            color: var(--gold);
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Pricing */
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .pricing-card {
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            background: rgba(40, 40, 40, 0.4);
-        }
-
-        .pricing-card.popular {
-            border: 1px solid var(--gold);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: var(--gold);
-            color: var(--dark-bg);
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .pricing-icon {
-            font-size: 48px;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .pricing-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .pricing-price {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--gold);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .pricing-btn {
-            display: inline-block;
-            padding: 14px 30px;
-            background: var(--gold);
-            color: var(--dark-bg);
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-btn:hover {
-            background: var(--gold-light);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        /* Booking */
-        .booking {
-            text-align: center;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .booking-content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 60px;
-        }
-
-        .booking-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: var(--gold);
-        }
-
-        .booking-text {
-            font-size: 20px;
-            margin-bottom: 40px;
-            color: var(--text-gray);
-        }
-
-        .booking-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 18px 50px;
-            background: var(--gold);
-            color: var(--dark-bg);
-            font-size: 20px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .booking-btn:hover {
-            background: var(--gold-light);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-        }
-
-        /* Instagram */
-        .instagram-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .instagram-item {
-            height: 250px;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .instagram-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .instagram-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .instagram-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 40px;
-            color: var(--gold);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .instagram-link:hover {
-            color: var(--gold-light);
-        }
-
-        /* Location */
-        .location-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .map-container {
-            height: 400px;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .location-info {
-            padding: 30px;
-        }
-
-        .location-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: var(--gold);
-        }
-
-        .location-detail {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .location-detail h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--text-light);
-        }
-
-        .location-detail p {
-            color: var(--text-gray);
-        }
-
-        /* Footer */
-        footer {
-            padding: 80px 0 40px;
-            position: relative;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--gold);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--glass-border);
-            color: var(--gold);
-            font-size: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--gold);
-            color: var(--dark-bg);
-            transform: translateY(-5px);
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .copyright {
-            color: var(--text-gray);
-            font-size: 14px;
-        }
-
-        .scroll-top {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gold);
-            color: var(--dark-bg);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-text {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .location-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .instagram-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero-title {
-                font-size: 48px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .section-title {
-                font-size: 32px;
-            }
-            
-            .hero-title {
-                font-size: 36px;
-            }
-            
-            .pricing-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .instagram-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nailsbypwettyy | Home Service Nail Art</title>
+  <meta name="description" content="Nail art premium home service di Sakra Barat, Lombok Timur. Open 09.00-20.00 WITA. Booking mulai 35K via WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff89d6;
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --text: #f9f9f9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(ellipse at top, #1b1b1b 0%, #000 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(20px);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 40px rgba(255,137,214,0.3);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      background: var(--primary);
+      color: #000;
+      font-weight: bold;
+      border-radius: 2rem;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+    }
+
+    .contact {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .contact a {
+      background: #222;
+      padding: 0.6rem 1.2rem;
+      border-radius: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid var(--glass-border);
+      transition: background 0.3s ease;
+    }
+
+    .contact a:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 2rem 1rem;
+      color: #888;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: 5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">nailsbypwettyy</div>
-            <nav class="nav-links">
-                <a href="#about">Tentang</a>
-                <a href="#gallery">Galeri</a>
-                <a href="#pricing">Harga</a>
-                <a href="#booking">Booking</a>
-                <a href="#location">Lokasi</a>
-            </nav>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Nail Art Premium</h1>
-                    <p class="hero-subtitle">Layanan home service profesional di Sakra Barat, Lombok Timur dengan sentuhan seni terbaik</p>
-                    <a href="#booking" class="hero-cta glass-card">
-                        <i class="fab fa-whatsapp"></i> Booking via WhatsApp
-                    </a>
-                </div>
-                <div class="hero-animation glass-card">
-                    <lottie-player 
-                        src="https://assets5.lottiefiles.com/packages/lf20_2pKGH2.json" 
-                        background="transparent" 
-                        speed="1" 
-                        loop 
-                        autoplay>
-                    </lottie-player>
-                </div>
-            </div>
-        </div>
-    </section>
+  <header>nailsbypwettyy</header>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tentang Kami</h2>
-                <p class="section-subtitle">Seniman nail art profesional dengan pengalaman lebih dari 5 tahun</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-image glass-card">
-                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nail Artist">
-                </div>
-                <div class="about-text">
-                    <p>Kami menawarkan layanan nail art home service premium dengan peralatan profesional dan bahan berkualitas tinggi. Setiap desain dibuat khusus untuk mencerminkan kepribadian dan gaya Anda.</p>
-                    <p>Dengan fokus pada detail dan kreativitas, kami menjamin hasil yang memuaskan dan tahan lama untuk membuat Anda tampil percaya diri.</p>
-                    
-                    <div class="about-info glass-card">
-                        <p><i class="fas fa-map-marker-alt"></i> Sakra Barat, Lombok Timur</p>
-                        <p><i class="fas fa-clock"></i> Setiap Hari: 09.00 - 20.00 WITA</p>
-                        <p><i class="fas fa-phone-alt"></i> +62 812 3456 7890</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="glass-card">
+      <h1>Nail Art Home Service</h1>
+      <p>Saya Putri, nail artist profesional dari <strong>Sakra Barat, Lombok Timur</strong>. Layanan premium langsung ke rumah kamu. Mulai dari <strong>Rp35.000</strong>. Buka setiap hari <strong>09.00–20.00 WITA</strong>.</p>
+      <div class="contact">
+        <a href="https://wa.me/6281234567890" target="_blank">Booking WhatsApp</a>
+        <a href="https://instagram.com/nailsbypwettyy" target="_blank">@nailsbypwettyy</a>
+      </div>
+      <a href="#more" class="btn">Lihat Detail</a>
+    </div>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="glass-card">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Galeri Karya</h2>
-                <p class="section-subtitle">Koleksi desain nail art terbaik kami</p>
-            </div>
-            
-            <div class="gallery-filters">
-                <button class="filter-btn glass-card active" data-filter="all">Semua</button>
-                <button class="filter-btn glass-card" data-filter="marble">Marble</button>
-                <button class="filter-btn glass-card" data-filter="simple">Simple</button>
-                <button class="filter-btn glass-card" data-filter="cute">Cute</button>
-                <button class="filter-btn glass-card" data-filter="premium">Premium</button>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1590540172601-6b1d55b6d0a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marble Design">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Marble Elegance</div>
-                        <div class="gallery-category">Marble</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1604654894701-8a4e3d8d0d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Simple Design">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Classic French</div>
-                        <div class="gallery-category">Simple</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1590239926044-4131f5d0658d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cute Design">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Floral Delight</div>
-                        <div class="gallery-category">Cute</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Design">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Gold Luxury</div>
-                        <div class="gallery-category">Premium</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1604654894701-8a4e3d8d0d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Simple Design">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Minimalist</div>
-                        <div class="gallery-category">Simple</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1590540172601-6b1d55b6d0a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marble Design">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">Marble Effect</div>
-                        <div class="gallery-category">Marble</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="more" class="glass-card">
+      <h1>Paket & Desain</h1>
+      <p><strong>Basic Care</strong> – Rp35K<br>
+        <strong>Simple Design</strong> – Rp75K<br>
+        <strong>Premium Art</strong> – Rp150K+ (3D, marble, glitter, custom request)</p>
+      <p>Garansi hasil 2 minggu. Bahan aman dan steril. Booking min H-1.</p>
+    </div>
+  </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Paket Harga</h2>
-                <p class="section-subtitle">Layanan nail art premium dengan harga terjangkau</p>
-            </div>
-            
-            <div class="pricing-cards">
-                <div class="pricing-card glass-card">
-                    <div class="pricing-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3 class="pricing-title">Basic Care</h3>
-                    <div class="pricing-price">Rp35.000</div>
-                    <ul class="pricing-features">
-                        <li>Pembersihan kuku</li>
-                        <li>Manicure dasar</li>
-                        <li>Warna solid</li>
-                        <li>Finishing</li>
-                    </ul>
-                    <a href="#booking" class="pricing-btn">Pilih Paket</a>
-                </div>
-                
-                <div class="pricing-card glass-card popular">
-                    <div class="popular-badge">POPULER</div>
-                    <div class="pricing-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="pricing-title">Design Simple</h3>
-                    <div class="pricing-price">Rp75.000</div>
-                    <ul class="pricing-features">
-                        <li>Semua dalam Basic Care</li>
-                        <li>1 desain nail art</li>
-                        <li>Pilihan warna premium</li>
-                        <li>Finishing glossy/matte</li>
-                    </ul>
-                    <a href="#booking" class="pricing-btn">Pilih Paket</a>
-                </div>
-                
-                <div class="pricing-card glass-card">
-                    <div class="pricing-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 class="pricing-title">Premium Design</h3>
-                    <div class="pricing-price">Rp150.000+</div>
-                    <ul class="pricing-features">
-                        <li>Semua dalam Design Simple</li>
-                        <li>Desain kompleks</li>
-                        <li>Hiasan 3D</li>
-                        <li>Garansi 2 minggu</li>
-                    </ul>
-                    <a href="#booking" class="pricing-btn">Pilih Paket</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer>
+    &copy; 2025 nailsbypwettyy. Made with 💅 in Lombok.
+  </footer>
 
-    <!-- Booking Section -->
-    <section id="booking">
-        <div class="container">
-            <div class="booking-content glass-card">
-                <h2 class="booking-title">Siap Memesan?</h2>
-                <p class="booking-text">Pesan layanan nail art premium langsung ke rumah Anda di Sakra Barat, Lombok Timur</p>
-                <a href="https://wa.me/6281234567890" class="booking-btn">
-                    <i class="fab fa-whatsapp"></i> Booking Sekarang
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Instagram Section -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Ikuti Kami</h2>
-                <p class="section-subtitle">Lihat karya terbaru dan inspirasi nail art di Instagram kami</p>
-            </div>
-            
-            <div class="instagram-grid">
-                <div class="instagram-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1590540172601-6b1d55b6d0a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nail Art">
-                </div>
-                <div class="instagram-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1604654894701-8a4e3d8d0d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nail Art">
-                </div>
-                <div class="instagram-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1590239926044-4131f5d0658d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nail Art">
-                </div>
-                <div class="instagram-item glass-card">
-                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nail Art">
-                </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="https://instagram.com/nailsbypwettyy" class="instagram-link">
-                    <i class="fab fa-instagram"></i> @nailsbypwettyy
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Lokasi Layanan</h2>
-                <p class="section-subtitle">Melayani home service di wilayah Sakra Barat, Lombok Timur</p>
-            </div>
-            
-            <div class="location-content">
-                <div class="map-container glass-card">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252721.62307465636!2d116.37653854999999!3d-8.6520714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdb7d23be25473%3A0x1c1b5f5d0b7c3d1e!2sSakra%20Barat%2C%20Lombok%20Timur%2C%20Nusa%20Tenggara%20Bar.!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                
-                <div class="location-info glass-card">
-                    <h3 class="location-title">Area Layanan</h3>
-                    
-                    <div class="location-detail">
-                        <h4>Sakra Barat</h4>
-                        <p>Melayani seluruh area Kecamatan Sakra Barat</p>
-                    </div>
-                    
-                    <div class="location-detail">
-                        <h4>Sakra Timur</h4>
-                        <p>Area terbatas dengan tambahan biaya transport</p>
-                    </div>
-                    
-                    <div class="location-detail">
-                        <h4>Luar Kota</h4>
-                        <p>Minimal booking 5 orang untuk layanan luar kota</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">nailsbypwettyy</div>
-                <div class="footer-social">
-                    <a href="https://wa.me/6281234567890" class="social-link glass-card">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://instagram.com/nailsbypwettyy" class="social-link glass-card">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">© 2023 nailsbypwettyy. All rights reserved.</div>
-                <div class="scroll-top glass-card">
-                    <i class="fas fa-arrow-up"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize GSAP animations
-        document.addEventListener('DOMContentLoaded', () => {
-            // Register ScrollTrigger plugin
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Hero animations
-            gsap.to('.hero-title', {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: 0.3
-            });
-            
-            gsap.to('.hero-subtitle', {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: 0.6
-            });
-            
-            gsap.to('.hero-cta', {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: 0.9
-            });
-            
-            gsap.to('.hero-animation', {
-                opacity: 1,
-                scale: 1,
-                duration: 1.2,
-                delay: 0.6
-            });
-            
-            // About animations
-            gsap.to('.about-image', {
-                scrollTrigger: {
-                    trigger: '.about',
-                    start: 'top 80%'
-                },
-                opacity: 1,
-                x: 0,
-                duration: 1
-            });
-            
-            gsap.to('.about-text', {
-                scrollTrigger: {
-                    trigger: '.about',
-                    start: 'top 80%'
-                },
-                opacity: 1,
-                x: 0,
-                duration: 1
-            });
-            
-            // Gallery animations
-            gsap.utils.toArray('.gallery-item').forEach((item, i) => {
-                gsap.from(item, {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 90%'
-                    },
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.8,
-                    delay: i * 0.1
-                });
-            });
-            
-            // Pricing animations
-            gsap.utils.toArray('.pricing-card').forEach((card, i) => {
-                gsap.from(card, {
-                    scrollTrigger: {
-                        trigger: '.pricing',
-                        start: 'top 80%'
-                    },
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.8,
-                    delay: i * 0.2
-                });
-            });
-            
-            // Gallery filter functionality
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('active');
-                });
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Scroll to top button
-            const scrollTopBtn = document.querySelector('.scroll-top');
-            
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Header scroll effect
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    document.querySelector('header').classList.add('scrolled');
-                } else {
-                    document.querySelector('header').classList.remove('scrolled');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
