@@ -753,4 +753,46 @@ body {
     font-size: 1.5rem;
   }
 
+
+
+
+
+
+
+
+
+
+
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  /* Background glassmorphism pink */
+  background: rgba(255, 107, 149, 0.2);  /* pink transparan */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 107, 149, 0.5);
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 30px rgba(255, 107, 149, 0.1);
+  color: var(--dark); /* warna ikon tetap default/dark */
+}
+
+.scroll-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 107, 149, 0.5);
+  background: rgba(255, 107, 149, 0.3);
+  border-color: rgba(255, 107, 149, 0.7);
+}
+
     
