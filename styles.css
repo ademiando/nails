@@ -190,7 +190,7 @@
       background: var(--dark-light);
       border: none;
       color: var(--text-light);
-      border-radius: 50px;
+      border-radius: 25px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
