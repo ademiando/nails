@@ -21,31 +21,91 @@
 
 
   
+<style>
+  /* Reset bawaan */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Sticky glassmorphism header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 16px 0;
+    color: white;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .mobile-menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  /* Hero background full to top */
+  .hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    overflow: hidden;
+  }
+</style>
+
 <!-- Header -->
-<header style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.2);
-  padding: 16px 0;
-  color: white;
-">
-  <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
-    <nav class="nav-links" style="display: flex; gap: 20px;">
-      <a href="#about" style="color: white; text-decoration: none; font-weight: 600;">Tentang</a>
-      <a href="#booking" style="color: white; text-decoration: none; font-weight: 600;">Booking</a>
-      <a href="#location" style="color: white; text-decoration: none; font-weight: 600;">Lokasi</a>
+<header>
+  <div class="container header-container">
+    <nav class="nav-links">
+      <a href="#about">Tentang</a>
+      <a href="#booking">Booking</a>
+      <a href="#location">Lokasi</a>
     </nav>
-    <button class="mobile-menu-btn" style="background: none; border: none; color: white; font-size: 1.5rem;">
+    <button class="mobile-menu-btn">
       <i class="fas fa-bars"></i>
     </button>
   </div>
 </header>
 
-<!-- Mobile Menu Overlay (Hanya menu tambahan) -->
+<!-- Mobile Menu Overlay -->
 <div class="mobile-menu-overlay" id="mobileMenu">
   <button class="close-menu-btn"><i class="fas fa-times"></i></button>
   <ul>
@@ -54,15 +114,16 @@
   </ul>
 </div>
 
-<!-- Hero Section -->  
-<section class="hero" style="position: relative; height: 100vh; background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding: 20px; color: white; overflow: hidden;">
-
-  <!-- Judul di atas -->
-  <div style="position: absolute; top: 80px; left: 0; right: 0; text-align: center;">
-    <h1 style="font-size: 2.5rem; margin: 0; font-weight: 700;">Nail Art <span style="color: #FF6B95;">NailsByPwettyy</span></h1>
+<!-- Hero Section -->
+<section class="hero">
+  <!-- Judul -->
+  <div style="position: absolute; top: 100px; left: 0; right: 0; text-align: center;">
+    <h1 style="font-size: 2.5rem; margin: 0; font-weight: 700;">
+      Nail Art <span style="color: #FF6B95;">NailsByPwettyy</span>
+    </h1>
   </div>
 
-  <!-- Subjudul dan CTA di bawah -->
+  <!-- Subjudul + CTA -->
   <div style="background-color: transparent; width: 100%; z-index: 1;">
     <p style="margin-bottom: 1rem; font-size: 1.2rem;">Layanan home service profesional di Sakra Barat, Lombok Timur</p>
     <a href="https://wa.me/6281234567890" style="background-color: #FF6B95; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">
@@ -70,24 +131,22 @@
     </a>
   </div>
 
-  <!-- Gradasi sangat halus atas -->
+  <!-- Gradasi atas -->
   <div style="position: absolute; top: 0; left: 0; right: 0; height: 80px;
     background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.2) 40%,
       rgba(0, 0, 0, 0) 100%);
     z-index: 0;"></div>
 
-  <!-- Gradasi sangat halus bawah -->
+  <!-- Gradasi bawah -->
   <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px;
     background: linear-gradient(to top,
-      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0.2) 40%,
       rgba(0, 0, 0, 0) 100%);
     z-index: 0;"></div>
-
 </section>
-
 
 
 
