@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   mobileMenuBtn.addEventListener('click', () => {
     mobileMenu.style.display = 'flex';
-    mobileMenu.classList.add('slide-down'); // asumsi class ini udah di CSS
+    mobileMenu.classList.add('slide-down');
   });
 
   closeMenuBtn.addEventListener('click', () => {
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       const submenu = this.nextElementSibling;
       if (submenu) {
-        // Toggle langsung via style jika gak mau nambah CSS
         submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
       }
     });
