@@ -11,16 +11,35 @@
   
 </head>
 <body>
+
+
+
+
+
+
+
+
+
   
-  <!-- Header -->
-<header>
-  <div class="container header-container">
-    <nav class="nav-links">
-      <a href="#about">Tentang</a>
-      <a href="#booking">Booking</a>
-      <a href="#location">Lokasi</a>
+<!-- Header -->
+<header style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 16px 0;
+  color: white;
+">
+  <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+    <nav class="nav-links" style="display: flex; gap: 20px;">
+      <a href="#about" style="color: white; text-decoration: none; font-weight: 600;">Tentang</a>
+      <a href="#booking" style="color: white; text-decoration: none; font-weight: 600;">Booking</a>
+      <a href="#location" style="color: white; text-decoration: none; font-weight: 600;">Lokasi</a>
     </nav>
-    <button class="mobile-menu-btn">
+    <button class="mobile-menu-btn" style="background: none; border: none; color: white; font-size: 1.5rem;">
       <i class="fas fa-bars"></i>
     </button>
   </div>
@@ -34,17 +53,6 @@
     <li><a href="#kerjasama">Kerjasama</a></li>
   </ul>
 </div>
-
-  
-
-
-
-
-
-
-
-
-
 
 <!-- Hero Section -->  
 <section class="hero" style="position: relative; height: 100vh; background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding: 20px; color: white; overflow: hidden;">
@@ -79,7 +87,6 @@
     z-index: 0;"></div>
 
 </section>
-
 
 
 
