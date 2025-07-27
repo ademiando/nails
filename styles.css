@@ -255,18 +255,6 @@
       letter-spacing: 1px;
     }
 
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet & mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr; /* 1 kolom di layar sangat kecil */
-    }
-}
-
     /* Pricing */
     .pricing-cards {
       display: grid;
@@ -432,16 +420,12 @@
     }
 
 @media (max-width: 768px) {
-    .instagram-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet & mobile */
-    }
+  .instagram-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (max-width: 480px) {
-    .instagram-grid {
-        grid-template-columns: 1fr; /* 1 kolom di layar sangat kecil */
-    }
-}
 
     /* Location */
     .location-content {
