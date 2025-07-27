@@ -420,9 +420,12 @@
     }
 
 @media (max-width: 768px) {
-  .instagram-grid,
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
